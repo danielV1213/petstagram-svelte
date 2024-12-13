@@ -1,0 +1,23 @@
+{
+  "name": "pugstagram",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Vélez",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "svelte": "^5.12.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/polyfill": "^7.12.1",
+    "@babel/preset-env": "^7.26.0",
+    "html-webpack-plugin": "^5.6.3",
+    "svelte-loader": "^3.2.4",
+    "webpack": "^5.97.1",
+    "webpack-cli": "^5.1.4"
+  }
+}
