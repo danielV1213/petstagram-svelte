@@ -1,23 +1,41 @@
 {
   "name": "pugstagram",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.0.1",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite dev --open",
+    "build": "vite build && npm run package",
+    "preview": "vite preview",
+    "package": "svelte-kit sync && svelte-package && publint",
+    "prepublishOnly": "npm run package"
   },
-  "author": "Daniel Vélez",
-  "license": "ISC",
-  "description": "",
-  "dependencies": {
-    "svelte": "^5.12.0"
+  "files": [
+    "dist",
+    "!dist/**/*.test.*",
+    "!dist/**/*.spec.*"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "svelte": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "svelte": "./dist/index.js"
+    }
+  },
+  "peerDependencies": {
+    "svelte": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.26.0",
-    "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.26.0",
-    "html-webpack-plugin": "^5.6.3",
-    "svelte-loader": "^3.2.4",
-    "webpack": "^5.97.1",
-    "webpack-cli": "^5.1.4"
+    "@sveltejs/adapter-auto": "^3.0.0",
+    "@sveltejs/kit": "^2.9.0",
+    "@sveltejs/package": "^2.0.0",
+    "@sveltejs/vite-plugin-svelte": "^5.0.0",
+    "publint": "^0.2.0",
+    "svelte": "^5.0.0",
+    "typescript": "^5.3.2",
+    "vite": "^6.0.0"
   }
 }
