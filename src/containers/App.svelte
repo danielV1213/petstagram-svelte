@@ -3,6 +3,7 @@
   import Main from "../components/Main.svelte";
   import Timeline from "../components/TimeLine.svelte";
   import Sidebar from "../components/Sidebar.svelte";
+  import Footer from "../components/Footer.svelte";
 </script>
 
 <Header />
@@ -10,6 +11,7 @@
   <Timeline />
   <Sidebar />
 </Main>
+<Footer />
 
 <style>
   :global(body) {
