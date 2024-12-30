@@ -1,6 +1,4 @@
 <script>
-  import { onMount } from "svelte";
-
   let year = new Date().getFullYear();
 </script>
 

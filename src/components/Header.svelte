@@ -7,10 +7,10 @@
       <div class="header-nav">
         <ul>
           <li>
-            <i class="fa-solid fa-heart"></i>
+            <i class="fas fa-solid fa-heart"></i>
           </li>
           <li>
-            <i class="fa-solid fa-user-alt"></i>
+            <i class="fas fa-solid fa-user-alt"></i>
           </li>
         </ul>
       </div>
