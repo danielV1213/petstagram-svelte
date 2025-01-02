@@ -1,15 +1,16 @@
 <script>
   import profilePicture from "../assets/cloe-profile.jpeg";
-  import post from "../assets/cloe.jpeg";
   import Comments from "./Comments.svelte";
+
+  export let post;
 </script>
 
 <div class="card">
   <div class="card-container">
     <div class="card-header">
       <div class="card-user">
-        <img src={profilePicture} alt="profile-img" />
-        <h2>cloe_petunia <span>Cali, Colombia</span></h2>
+        <img src={post.avatar} alt="profile-img" />
+        <h2>{post.username} <span>{post.location}</span></h2>
       </div>
       <div class="card-settings">
         <i class="fas fa-ellipsis-h"></i>
@@ -17,7 +18,7 @@
     </div>
     <div class="card-photo">
       <figure>
-        <img src={post} alt="post-img" />
+        <img src={post.photo} alt="post-img" />
       </figure>
     </div>
     <div class="card-icons">
@@ -30,8 +31,9 @@
       </div>
     </div>
     <div class="card-description">
-      <h3>cloe_petunia</h3>
+      <h3>{post.postComment}</h3>
     </div>
+    <Comments comments={post.comments} />
   </div>
 </div>
 

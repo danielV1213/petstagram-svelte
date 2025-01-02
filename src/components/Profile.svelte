@@ -1,5 +1,7 @@
 <script>
-  import profilePicture from "../assets/daniel-img.jpg";
+  import profilePicture from "../assets/user.webp";
+  export let nickname;
+  export let name;
 </script>
 
 <div class="profile">
@@ -8,8 +10,8 @@
       <img src={profilePicture} alt="profile-img" />
     </div>
     <div class="profile-info">
-      <h2>daniel2.jsx</h2>
-      <span>Daniel Vélez</span>
+      <h2>{nickname}</h2>
+      <span>{name}</span>
     </div>
   </div>
 </div>
@@ -20,8 +22,8 @@
     align-items: center;
   }
   .profile-avatar img {
-    width: 42px;
-    height: 42px;
+    max-width: 55px;
+    max-height: 55px;
     border-radius: 50%;
   }
   .profile-info {

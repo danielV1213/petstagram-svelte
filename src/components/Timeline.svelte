@@ -1,10 +1,17 @@
 <script>
   import Card from "./Card.svelte";
+  import Spinner from "./Spinner.svelte";
+
+  export let posts = [];
 </script>
 
 <div class="timeline">
   <div class="timeline-container">
-    <Card />
+    {#each posts as post}
+      <Card {post} />
+    {:else}
+      <Spinner />
+    {/each}
   </div>
 </div>
 
