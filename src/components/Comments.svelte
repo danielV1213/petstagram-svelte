@@ -28,7 +28,7 @@
         <input
           type="text"
           class="comments-input"
-          placeholder="Add comment"
+          placeholder="Agregar comentario"
           id="text"
         />
         <button type="submit">Post</button>
