@@ -1,11 +1,29 @@
 <script>
   import profilePicture from "../assets/cloe-profile.jpeg";
   import Comments from "./Comments.svelte";
+  import Modal from "./Modal.svelte";
+  import Share from "./Share.svelte";
+
+  import { blur } from "svelte/transition";
 
   export let post;
+
+  let isModal = false;
+
+  function handleClick() {
+    isModal = !isModal;
+  }
 </script>
 
 <div class="card">
+  {#if isModal}
+    <div transition:blur>
+      <Modal>
+        <Share on:click={handleClick} />
+      </Modal>
+    </div>
+  {/if}
+
   <div class="card-container">
     <div class="card-header">
       <div class="card-user">
@@ -24,7 +42,7 @@
     <div class="card-icons">
       <div class="card-icons-first">
         <i class="fas fa-heart"></i>
-        <i class="fas fa-paper-plane"></i>
+        <i class="fas fa-paper-plane" on:click={handleClick}></i>
       </div>
       <div class="card-icons-second">
         <i class="fas fa-bookmark"></i>
