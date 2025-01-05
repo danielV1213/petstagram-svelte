@@ -2,7 +2,7 @@
   import { onMount } from "svelte";
   import Header from "../components/Header.svelte";
   import Main from "../components/Main.svelte";
-  import Timeline from "../components/TimeLine.svelte";
+  import Timeline from "../components/Timeline.svelte";
   import Sidebar from "../components/Sidebar.svelte";
 
   let data = {};
