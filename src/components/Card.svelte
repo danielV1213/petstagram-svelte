@@ -1,17 +1,31 @@
 <script>
   import profilePicture from "../assets/cloe-profile.jpeg";
+
   import Comments from "./Comments.svelte";
   import Modal from "./Modal.svelte";
   import Share from "./Share.svelte";
 
   import { blur } from "svelte/transition";
 
+  import { likeCount } from "../store/store";
+
   export let post;
 
   let isModal = false;
+  let like = false;
+  let bookmark = false;
 
   function handleClick() {
     isModal = !isModal;
+  }
+
+  function handleLike() {
+    like = !like;
+    if (like) {
+      likeCount.update((n) => n + 1);
+    } else {
+      likeCount.update((n) => n - 1);
+    }
   }
 </script>
 
@@ -35,17 +49,24 @@
       </div>
     </div>
     <div class="card-photo">
-      <figure>
+      <!-- How to handle double clicks -->
+      <figure on:dblclick={handleLike}>
         <img src={post.photo} alt="post-img" />
       </figure>
     </div>
     <div class="card-icons">
       <div class="card-icons-first">
-        <i class="fas fa-heart"></i>
+        <!-- This approach allows the HTML element to toggle the specified classs depending on the passed value -->
+        <i class="fas fa-heart" class:active-like={like} on:click={handleLike}
+        ></i>
         <i class="fas fa-paper-plane" on:click={handleClick}></i>
       </div>
       <div class="card-icons-second">
-        <i class="fas fa-bookmark"></i>
+        <i
+          class="fas fa-bookmark"
+          class:active-bookmark={bookmark}
+          on:click={() => (bookmark = !bookmark)}
+        ></i>
       </div>
     </div>
     <div class="card-description">
